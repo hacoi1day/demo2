@@ -33,6 +33,22 @@ Route::group(['prefix' => 'role'], function () {
         'as' => 'role.list',
         'uses' => 'RoleController@index'
     ]);
+    Route::post('store', [
+        'as' => 'role.store',
+        'uses' => 'RoleController@store'
+    ]);
+    Route::get('edit/{id}', [
+        'as' => 'role.edit',
+        'uses' => 'RoleController@edit'
+    ]);
+    Route::post('update/{id}', [
+        'as' => 'role.update',
+        'uses' => 'RoleController@update'
+    ]);
+    Route::get('delete/{id}', [
+        'as' => 'role.delete',
+        'uses' => 'RoleController@delete'
+    ]);
 });
 // account route
 Route::group(['prefix' => 'account'], function () {
