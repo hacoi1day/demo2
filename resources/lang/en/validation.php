@@ -131,6 +131,9 @@ return [
         'attribute-name' => [
             'rule-name' => 'custom-message',
         ],
+        'phone' => [
+            'in_phone' => 'Please enter a Vietnam phone number'
+        ]
     ],
 
     /*

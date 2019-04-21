@@ -21,19 +21,25 @@
                             <a class="nav-link" href="{{ route('category.list') }}">Category</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('account.insert') }}">Account Add</a>
+                            <a class="nav-link" href="{{ route('account.insert') }}">Add User</a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('role.list') }}">List Role</a>
+                        </li>
+
+
+
                         @if(!Auth::check())
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ route('get.login') }}">Login</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ route('get.register') }}">Register</a>
-                        </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('get.login') }}">Login</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('get.register') }}">Register</a>
+                            </li>
                         @else
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ route('get.logout') }}">Logout</a>
-                        </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('get.logout') }}">Logout</a>
+                            </li>
                         @endif
                     </ul>
                 </div>

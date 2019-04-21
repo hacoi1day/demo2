@@ -14,5 +14,10 @@ class RoleController extends Controller
         $this->role = $role;
     }
 
+    public function index()
+    {
+        return view('role.list');
+    }
+
 
 }

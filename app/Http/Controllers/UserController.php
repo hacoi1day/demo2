@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\User;
 
+use App\Http\Requests\StoreRegister;
+
 class UserController extends Controller
 {
     protected $user;
@@ -40,8 +42,6 @@ class UserController extends Controller
                 return redirect()->back()->with('data-old', $params);
             }
         }
-
-
     }
 
     public function getLogout()
@@ -58,20 +58,8 @@ class UserController extends Controller
         return view('user.register');
     }
 
-    public function postRegister(Request $request)
+    public function postRegister(StoreRegister $request)
     {
-        $this->validate($request, [
-            'name' => 'required|min:4',
-            'email' => 'required|email|unique:users',
-            'password' => 'required|min:4',
-            'passwordAgain' => 'same:password'
-        ], [
-            'name.min' => 'tên phải có ít nhất 4 ký tự',
-            'email.unique' => 'email đã tồn tại',
-            'password.min' => 'mật khẩu phải có ít nhất 4 ký tự',
-            'passwordAgain.same' => 'mật khâu nhập lại không đúng',
-        ]);
-
         $params = $request->all();
         $name = $params['name'];
         $email = $params['email'];
