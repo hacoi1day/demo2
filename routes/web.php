@@ -129,3 +129,19 @@ Route::group(['prefix' => 'role'], function () {
         'uses' => 'RoleController@index'
     ]);
 });
+
+// account route
+Route::group(['prefix' => 'account'], function () {
+    Route::get('/', [
+        'as' => 'account.list',
+        'uses' => 'AccountController@index'
+    ]);
+    Route::get('insert', [
+        'as' => 'account.insert',
+        'uses' => 'AccountController@insert'
+    ]);
+    Route::post('store', [
+        'as' => 'account.store',
+        'uses' => 'AccountController@store'
+    ]);
+});

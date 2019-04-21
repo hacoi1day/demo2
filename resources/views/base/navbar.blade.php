@@ -20,6 +20,9 @@
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('category.list') }}">Category</a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('account.insert') }}">Account Add</a>
+                        </li>
                         @if(!Auth::check())
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('get.login') }}">Login</a>
